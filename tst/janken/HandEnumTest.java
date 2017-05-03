@@ -4,7 +4,6 @@ import static janken.HandEnum.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
-import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
@@ -80,33 +79,7 @@ public class HandEnumTest {
 			int expected	= p.expected;
 
 			// Assert
-			assertThat(actual,is(expected));
-
-		}
-
-		@Test
-		public void judgeTestGU_GU(){
-			// Arrange
-			HandEnum sut = GU;
-
-			// Actual
-			int actual		= sut.judge(GU);
-			int expected	= 0;
-
-			// Assert
-			assertThat(actual,is(expected));
-		}
-		@Test
-		public void judgeTestGU_CHOKI(){
-			// Arrange
-			HandEnum sut = GU;
-
-			// Actual
-			int actual		= sut.judge(CHOKI);
-			int expected	= 1;
-
-			// Assert
-			assertThat(actual,is(expected));
+			assertThat(p.sut + "VS" + p.paramHand,actual,is(expected));
 
 		}
 	}
