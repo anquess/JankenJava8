@@ -47,24 +47,24 @@ public class HandEnumTest {
 	}
 
 	@Test
-	public void compareToTestGU_GU(){
+	public void judgeTestGU_GU(){
 		// Arrange
 		HandEnum sut = GU;
 
 		// Actual
-		int actual		= sut.compareTo(GU);
+		int actual		= sut.judge(GU);
 		int expected	= 0;
 
 		// Assert
 		assertThat(actual,is(expected));
 	}
 	@Test
-	public void compareToTestGU_CHOKI(){
+	public void judgeTestGU_CHOKI(){
 		// Arrange
 		HandEnum sut = GU;
 
 		// Actual
-		int actual		= sut.compareTo(CHOKI);
+		int actual		= sut.judge(CHOKI);
 		int expected	= 0;
 
 		// Assert
