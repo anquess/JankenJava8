@@ -6,51 +6,43 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
+import org.junit.experimental.theories.DataPoints;
+import org.junit.experimental.theories.Theories;
+import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
 @RunWith(Enclosed.class)
 public class HandEnumTest {
 
+	@RunWith(Theories.class)
 	public static class toStringTest{
-		@Test
-		public void ToStringTestGU() {
-			// Arrange
-			HandEnum sut = GU;
-
-			// Actual
-			String actual	= sut.toString();
-			String expected	= "GU";
-
-			// Assert
-			assertThat(actual,is(expected));
+		@DataPoints
+		public static Fixture[] PARAMs = {
+				new Fixture(GU,"GU"),
+				new Fixture(CHOKI, "CHOKI"),
+				new Fixture(PAH, "PAH")
+		};
+		static class Fixture{
+			HandEnum	sut;
+			String		expected;
+			Fixture(HandEnum sut,String expected){
+				this.sut		= sut;
+				this.expected	= expected;
+			}
 		}
-
-		@Test
-		public void toStringTestCHOKI() {
+		@Theory
+		public void ToStringTest(Fixture p) {
 			// Arrange
-			HandEnum sut = CHOKI;
+			HandEnum sut = p.sut;
 
 			// Actual
-			String actual	= sut.toString();
-			String expected	= "CHOKI";
-
-			// Assert
-			assertThat(actual,is(expected));
-		}
-		@Test
-		public void toStringTestPAH() {
-			// Arrange
-			HandEnum sut = PAH;
-
-			// Actual
-			String actual	= sut.toString();
-			String expected	= "PAH";
+			String actual		= sut.toString();
+			String expected	= p.expected;
 
 			// Assert
 			assertThat(actual,is(expected));
 		}
 	}
-
 	public static class JudgeTest{
 		@Test
 		public void judgeTestGU_GU(){
