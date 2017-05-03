@@ -1,5 +1,6 @@
 package janken;
 
+import static janken.HandEnum.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
@@ -43,6 +44,24 @@ public class PlayerTest {
 
 		// Assert
 		assertThat(actual,is(expected));
+	}
+
+	@Test
+	public void showHandTestグーだけの戦術(){
+		// Arrange
+		Player sut = new Player("せいのすけ");
+		// Actual
+		sut.setTactics( () -> グー);
+		int expected 	= 100;
+		int actual		= 0;
+		for (int i = 0; i < expected; i++) {
+			if(sut.showHand().judge(グー) == 0) actual++;
+		}
+
+
+		// Assert
+		assertThat(actual,is(expected));
+
 	}
 
 

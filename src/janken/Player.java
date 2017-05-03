@@ -21,5 +21,10 @@ public class Player {
 	public void notifyWin() {
 		this.wincount++;
 	}
+	public HandEnum showHand() {
+		HandEnum hand = this.tactics.showHand();
+		System.out.println(this + "さんの手：" + hand);
+		return hand;
+	}
 
 }
