@@ -1,5 +1,6 @@
 package janken;
 
+import static janken.HandEnum.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
@@ -10,8 +11,7 @@ public class HandEnumTest {
 	@Test
 	public void toStringTestGU() {
 		// Arrange
-		HandEnum sut = HandEnum.GU;
-
+		HandEnum sut = GU;
 
 		// Actual
 		String actual	= sut.toString();
@@ -19,7 +19,6 @@ public class HandEnumTest {
 
 		// Assert
 		assertThat(actual,is(expected));
-
 	}
 
 }
