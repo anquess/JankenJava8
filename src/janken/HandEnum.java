@@ -1,7 +1,7 @@
 package janken;
 
 public enum HandEnum{
-	GU,CHOKI,PAH;
+	グー,チョキ,パー;
 	public int judge(HandEnum hand){
 		switch(this.ordinal() - hand.ordinal()){
 		case 0:

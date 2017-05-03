@@ -17,9 +17,9 @@ public class HandEnumTest {
 	public static class toStringTest{
 		@DataPoints
 		public static Fixture[] PARAMs = {
-				new Fixture(GU,"GU"),
-				new Fixture(CHOKI, "CHOKI"),
-				new Fixture(PAH, "PAH")
+				new Fixture(グー,"グー"),
+				new Fixture(チョキ, "チョキ"),
+				new Fixture(パー, "パー")
 		};
 		static class Fixture{
 			HandEnum	sut;
@@ -47,15 +47,15 @@ public class HandEnumTest {
 
 		@DataPoints
 		public static Fixture[] PARAMs ={
-				new Fixture(GU, GU, 0),
-				new Fixture(CHOKI, CHOKI, 0),
-				new Fixture(PAH, PAH, 0),
-				new Fixture(GU, CHOKI, 1),
-				new Fixture(GU, PAH, -1),
-				new Fixture(CHOKI, GU, -1),
-				new Fixture(CHOKI, PAH, 1),
-				new Fixture(PAH, GU, 1),
-				new Fixture(PAH, CHOKI, -1),
+				new Fixture(グー, グー, 0),
+				new Fixture(チョキ, チョキ, 0),
+				new Fixture(パー, パー, 0),
+				new Fixture(グー, チョキ, 1),
+				new Fixture(グー, パー, -1),
+				new Fixture(チョキ, グー, -1),
+				new Fixture(チョキ, パー, 1),
+				new Fixture(パー, グー, 1),
+				new Fixture(パー, チョキ, -1),
 		};
 
 		static class Fixture{
