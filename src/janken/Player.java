@@ -1,9 +1,13 @@
 package janken;
 
 public class Player {
-	private String name;
-	private int	wincount;
+	private String 	name;
+	private int		wincount;
+	private Tactics 	tactics;
 
+	public void setTactics(Tactics tactics) {
+		this.tactics = tactics;
+	}
 	public Player(String name) {
 		this.name		= name;
 	}
