@@ -1,6 +1,6 @@
 package janken;
 
 public enum HandEnum {
-	GU
+	GU,CHOKI,PAH
 
 }

@@ -21,4 +21,29 @@ public class HandEnumTest {
 		assertThat(actual,is(expected));
 	}
 
+	@Test
+	public void toStringTestCHOKI() {
+		// Arrange
+		HandEnum sut = CHOKI;
+
+		// Actual
+		String actual	= sut.toString();
+		String expected	= "CHOKI";
+
+		// Assert
+		assertThat(actual,is(expected));
+	}
+	@Test
+	public void toStringTestPAH() {
+		// Arrange
+		HandEnum sut = PAH;
+
+		// Actual
+		String actual	= sut.toString();
+		String expected	= "PAH";
+
+		// Assert
+		assertThat(actual,is(expected));
+	}
+
 }
