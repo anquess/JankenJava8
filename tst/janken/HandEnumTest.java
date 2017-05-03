@@ -43,7 +43,47 @@ public class HandEnumTest {
 			assertThat(actual,is(expected));
 		}
 	}
+	@RunWith(Theories.class)
 	public static class JudgeTest{
+
+		@DataPoints
+		public static Fixture[] PARAMs ={
+				new Fixture(GU, GU, 0),
+				new Fixture(CHOKI, CHOKI, 0),
+				new Fixture(PAH, PAH, 0),
+				new Fixture(GU, CHOKI, 1),
+				new Fixture(GU, PAH, -1),
+				new Fixture(CHOKI, GU, -1),
+				new Fixture(CHOKI, PAH, 1),
+				new Fixture(PAH, GU, 1),
+				new Fixture(PAH, CHOKI, -1),
+		};
+
+		static class Fixture{
+			HandEnum	sut;
+			HandEnum	paramHand;
+			int			expected;
+			Fixture(HandEnum sut, HandEnum paramHand, int expected) {
+				this.sut = sut;
+				this.paramHand = paramHand;
+				this.expected = expected;
+			}
+		}
+
+		@Theory
+		public void judgeTest(Fixture p){
+			// Arrange
+			HandEnum sut = p.sut;
+
+			// Actual
+			int actual		= sut.judge(p.paramHand);
+			int expected	= p.expected;
+
+			// Assert
+			assertThat(actual,is(expected));
+
+		}
+
 		@Test
 		public void judgeTestGU_GU(){
 			// Arrange
