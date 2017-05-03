@@ -57,6 +57,19 @@ public class HandEnumTest {
 
 		// Assert
 		assertThat(actual,is(expected));
+	}
+	@Test
+	public void compareToTestGU_CHOKI(){
+		// Arrange
+		HandEnum sut = GU;
+
+		// Actual
+		int actual		= sut.compareTo(CHOKI);
+		int expected	= 0;
+
+		// Assert
+		assertThat(actual,is(expected));
 
 	}
+
 }
