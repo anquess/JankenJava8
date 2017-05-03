@@ -65,7 +65,7 @@ public class HandEnumTest {
 
 		// Actual
 		int actual		= sut.judge(CHOKI);
-		int expected	= 0;
+		int expected	= 1;
 
 		// Assert
 		assertThat(actual,is(expected));
